@@ -1,0 +1,929 @@
+﻿
+.ui-datepicker {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/blacktrans.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.ui-datepicker {
+    display: none;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    z-index: 100 !important;
+}
+.ui-datepicker-header {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    position: relative;
+    text-align: center;
+}
+.ui-datepicker-calendar {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: collapse;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #ccc;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #ccc;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+}
+.ui-datepicker-calendar thead th {
+    color: #666;
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.ui-datepicker-calendar thead th {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/thead.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.ui-datepicker-calendar td {
+    border-left-color: #ccc;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-top-color: #ccc;
+    border-top-style: solid;
+    border-top-width: 1px;
+    text-align: right;
+}
+.ui-datepicker-calendar td {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/thead.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+}
+.ui-datepicker-calendar td a {
+    color: #666;
+    display: block;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    text-shadow: 1px 1px #f7f7f7;
+}
+.ui-datepicker-calendar td a:hover {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #c8d9ed;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    color: #333;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+}
+.ui-datepicker-calendar td:first-child {
+    border-left-color: #ccc;
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+}
+.ui-datepicker-prev span, .ui-datepicker-next span {
+    display: none;
+}
+.ui-datepicker-prev {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/calarrow.png");
+    background-origin: padding-box;
+    background-position: 3px -39px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    cursor: pointer;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+}
+.ui-datepicker-next {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/calarrow.png");
+    background-origin: padding-box;
+    background-position: 3px 1px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.ui-datepicker-inline {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+.ui-datepicker-inline .ui-datepicker-calendar {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: -moz-use-text-color;
+    border-left-style: none;
+    border-left-width: 0;
+    border-right-color: -moz-use-text-color;
+    border-right-style: none;
+    border-right-width: 0;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+    width: 100%;
+}
+.ui-datepicker-inline .ui-datepicker-calendar td {
+    border-left-color: #ddd;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-top-color: #ddd;
+    border-top-style: solid;
+    border-top-width: 1px;
+    text-align: right;
+}
+.ui-datepicker-inline .ui-datepicker-header {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #eee;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    position: relative;
+    text-align: center;
+}
+.ui-datepicker-inline .ui-datepicker-calendar thead th {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/titlebg.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #666;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.ui-tabs {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fcfcfc;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #ccc;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #ccc;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #ccc;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.ui-tabs {
+    box-shadow: 1px 1px 2px #eee;
+}
+.ui-tabs-nav {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #eee;
+    background-image: url("../../images/thead.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+}
+.ui-tabs-nav {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 41px;
+    position: relative;
+}
+.ui-tabs-nav li {
+    display: inline-block;
+    float: left;
+}
+.ui-tabs-nav li:first-child a {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0;
+}
+.ui-tabs-nav li a {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #eee;
+    background-image: url("../../images/titlebg.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-right-color: #ddd;
+    border-right-style: solid;
+    border-right-width: 1px;
+    color: #666;
+    display: block;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+.ui-tabs-nav li a:hover {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #ddd;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+}
+.ui-tabs-nav li.ui-state-active a {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #fff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #333;
+}
+.ui-tabs-hide {
+    display: none;
+}
+.ui-tabs-panel {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+.ui-tabs-panel ul {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.ui-tabs-panel ul li {
+    padding-left: 10px;
+}
+.widgetbox .ui-tabs {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: -moz-use-text-color;
+    border-left-style: none;
+    border-left-width: 0;
+    border-right-color: -moz-use-text-color;
+    border-right-style: none;
+    border-right-width: 0;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+}
+.widgetbox .ui-tabs-nav {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 31px;
+}
+.widgetbox .ui-tabs-nav li a {
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+.accordion {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fcfcfc;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #ccc;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #ccc;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #ccc;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.accordion {
+    box-shadow: 1px 1px 3px #ddd;
+}
+.ui-accordion-header {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #eee;
+    background-image: url("../../images/thead.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-top-color: #ccc;
+    border-top-style: solid;
+    border-top-width: 1px;
+    position: relative;
+}
+.ui-accordion-header {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: normal;
+    text-shadow: 1px 1px #f7f7f7;
+    text-transform: uppercase;
+}
+.ui-accordion-header:first-child {
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+}
+.ui-accordion-header a {
+    color: #333;
+    display: block;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.ui-accordion-header a:hover {
+    color: #069;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+}
+.ui-accordion-content {
+    border-top-color: #ccc;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: #666;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.ui-accordion-header .ui-icon {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/arrow.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    width: 10px;
+}
+.ui-state-active .ui-icon {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/arrow.png");
+    background-origin: padding-box;
+    background-position: 0 -45px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: inline-block;
+    height: 5px;
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    width: 10px;
+}
+.ui-slider {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #ccc;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #bbb;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #bbb;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #bbb;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #bbb;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    position: relative;
+}
+.ui-slider {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.ui-slider a {
+    display: inline-block;
+    z-index: 2;
+}
+.ui-slider-range {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.ui-slider-horizontal {
+    display: block;
+    height: 2px;
+}
+.ui-slider-horizontal a {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #1995ff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #333;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #333;
+    border-left-style: solid;
+    border-left-width: 3px;
+    border-right-color: #333;
+    border-right-style: solid;
+    border-right-width: 3px;
+    border-top-color: #333;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-style: solid;
+    border-top-width: 3px;
+    height: 6px;
+    position: absolute;
+    top: -5px;
+    width: 6px;
+}
+.ui-slider-horizontal a.ui-slider-handle {
+    margin-left: -8px;
+}
+.ui-slider-horizontal a:hover, .ui-slider-horizontal a.ui-state-active {
+    box-shadow: 0 0 0 4px #888;
+}
+.ui-slider-horizontal .ui-slider-range {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #1995ff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    height: 3px;
+    position: absolute;
+}
+.ui-slider-horizontal .ui-slider-range {
+    box-shadow: 0 0 5px #9cd2ff;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+}
+.ui-slider-vertical {
+    width: 2px;
+}
+.ui-slider-vertical a {
+    left: -3px;
+    position: absolute;
+}
+.ui-slider-vertical a {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #1995ff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #333;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #333;
+    border-left-style: solid;
+    border-left-width: 3px;
+    border-right-color: #333;
+    border-right-style: solid;
+    border-right-width: 3px;
+    border-top-color: #333;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-style: solid;
+    border-top-width: 3px;
+    height: 6px;
+    left: -5px;
+    position: absolute;
+    width: 6px;
+}
+.ui-slider-vertical a:hover, .ui-slider-vertical a.ui-state-active {
+    box-shadow: 0 0 0 4px #888;
+}
+.ui-slider-vertical .ui-slider-range {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #1995ff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    left: -1px;
+    position: absolute;
+    width: 4px;
+}
+.ui-slider-vertical .ui-slider-range {
+    box-shadow: 0 0 5px #9cd2ff;
+}
+.ui-slider-vertical .ui-slider-range-min {
+    bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+    right: 0;
+}
+.ui-dialog {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/blacktrans.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+.ui-dialog {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    position: relative;
+}
+.ui-dialog-titlebar {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #eee;
+    background-image: url("../../images/thead.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: #fff;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+}
+.ui-dialog-content {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #fff;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.ui-dialog-titlebar {
+    color: #069;
+    font-weight: bold;
+}
+.ui-dialog-titlebar-close {
+    color: #666;
+    font-size: 11px;
+    font-weight: normal;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+}
+.ui-dialog-titlebar-close:hover {
+    color: #333;
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+}
+.ui-dialog .wysiwyg legend {
+    font-size: 11px;
+    left: 15px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 13px;
+}
+.ui-dialog .wysiwyg p {
+    margin-bottom: 8px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 8px;
+}
+.ui-dialog .wysiwyg input.submit {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/buttonbg3.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-bottom-color: #314a78;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #314a78;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #314a78;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #314a78;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: #fff;
+    font-size: 11px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.ui-dialog .wysiwyg input.reset {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../../images/thead.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    border-bottom-color: #bbb;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: #bbb;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #bbb;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #bbb;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: #333;
+    font-size: 11px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.ui-dialog .wysiwyg label {
+    float: left;
+    width: 100px;
+}

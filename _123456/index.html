@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang chủ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/plugins/jquery-1.11.3.min.js"></script>
+    <script src="js/plugins/bootstrap.min.js"></script>
+    <script src="js/plugins/owl.carousel.min.js"></script>
+    <script src="js/plugins/jquery.matchHeight-min.js"></script>
+    <script src="js/plugins/jquery.nivo.slider.js"></script>
+    <script src="js/plugins/jquery.fancybox.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="container clearfix">
+            <nav class="menu clearfix">
+                <div class="menu-header clearfix">
+                    <h1 class="logo"><a href="">Alpha Lipid</a></h1>
+                    <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                </div>
+                <div class="desktop-menu">
+                    <div class="hotline">
+                        <div class="hotline-inner">
+                            Hotline: <span>0963.182.173</span>
+                        </div>
+                    </div>
+                    <ul class="main-menu clearfix">
+                        <li class="active"><a href="index.html">TRANG CHỦ</a></li>
+                        <li><a href="#">GIỚI THIỆU</a></li>
+                        <li><a href="products.html">SẢN PHẨM</a></li>
+                        <li><a href="#">KINH DOANH</a></li>
+                        <li><a href="#">TIN TỨC & SỰ KIỆN <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="#">SỨC KHỎE</a></li>
+                                <li><a href="#">SỮA NON</a></li>
+                                <li><a href="#">ĐỘC TỐ</a></li>
+                                <li><a href="#">HỆ MIỄN DỊCH</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="faqs.html">HỎI ĐÁP</a></li>
+                        <li><a href="contact.html">LIÊN HỆ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- header -->
+    <main id="main" class="main">
+        <div class="home">
+            <section id="home-slider" class="home-slider">
+                <div class="nivoSlider">
+                    <img src="img/slider-1.jpg" alt="" />
+                    <img src="img/slider-2.jpg" alt="" />
+                    <img src="img/slider-3.jpg" alt="" />
+                    <img src="img/slider-4.jpg" alt="" />
+                </div>
+                <script type="text/javascript">
+                $(window).load(function() {
+                    $('.nivoSlider').nivoSlider({
+                        effect: 'random', // Specify sets like: 'fold,fade,sliceDown'
+                        slices: 15, // For slice animations
+                        boxCols: 8, // For box animations
+                        boxRows: 4, // For box animations
+                        animSpeed: 500, // Slide transition speed
+                        pauseTime: 3000, // How long each slide will show
+                        startSlide: 0, // Set starting Slide (0 index)
+                        directionNav: false, // Next & Prev navigation
+                        controlNav: true, // 1,2,3... navigation
+                        controlNavThumbs: false, // Use thumbnails for Control Nav
+                        pauseOnHover: true, // Stop animation while hovering
+                        manualAdvance: false, // Force manual transitions
+                        prevText: 'Prev', // Prev directionNav text
+                        nextText: 'Next', // Next directionNav text
+                        randomStart: false, // Start on a random slide
+                        beforeChange: function() {}, // Triggers before a slide transition
+                        afterChange: function() {}, // Triggers after a slide transition
+                        slideshowEnd: function() {}, // Triggers after all slides have been shown
+                        lastSlide: function() {}, // Triggers when last slide is shown
+                        afterLoad: function() {} // Triggers when slider has loaded
+                    })
+                });
+                </script>
+            </section>
+        </div>
+    </main>
+    <!-- main -->
+    <footer id="footer" class="footer">
+        <img class="footer-bg" src="img/sua.png" alt="">
+        <div class="container clearfix">
+            <div class="footer-social">
+                <a href="#" title=""><i class="fa fa-facebook"></i></a>
+                <a href="#" title=""><i class="fa fa-google-plus"></i></a>
+                <a href="#" title=""><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer -->
+</body>
+
+</html>
