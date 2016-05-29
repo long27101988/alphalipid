@@ -4,16 +4,17 @@
         </div>
         <form action="" method="">
             <h1>THÔNG TIN CỦA BẠN</h1>
+            <?php echo validation_errors(); ?>
             <div class="form-in">
-                <input type="text" name="txtName" value="" placeholder="Họ tên *">
+                <input type="text" name="txtName" value="" required placeholder="Họ tên *">
                 <br/>
-                <input type="text" name="txtEmail" value="" placeholder="Email *">
+                <input type="text" name="txtEmail" value="" required placeholder="Email *">
                 <br/>
                 <input type="text" name="txtPhone" value="" placeholder="Điện thoại">
                 <br/>
                 <input type="text" name="txtAddress" value="" placeholder="Địa chỉ">
                 <br/>
-                <textarea name="" placeholder="Lời nhắn *"></textarea>
+                <textarea name="txtContent" required placeholder="Lời nhắn *"></textarea>
                 <br/>
                 <input type="submit" name="" value="Gửi">
                 <br/>

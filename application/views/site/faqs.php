@@ -25,29 +25,30 @@
         </div>
         <div class="faqs-bottom">
             <h2 class="faqs-title">GỬI CÂU HỎI</h2>
-            <form action="" method="">
+            <?php echo validation_errors(); ?>
+            <form action="" method="post">
                 <div class="clearfix">
                     <p>
-                       <input type="text" name="txtName" value="" placeholder="Họ tên *"> 
+                       <input type="text" name="txtName" value="" required placeholder="Họ tên *"> 
                     </p>
                     <p>
-                       <input type="text" name="txtPhone" value="" placeholder="Điện thoai *" class="last"> 
+                       <input type="text" name="txtPhone" value="" required placeholder="Điện thoai *" class="last"> 
                     </p>
                 </div>
                 <div class="clearfix">
                     <p>
-                        <input type="text" name="txtEmail" value="" placeholder="Email *">
+                        <input type="text" name="txtEmail" value="" required placeholder="Email *">
                     </p>
                     <p>
-                        <input type="text" name="txtAddress" value="" placeholder="Địa chỉ *">
+                        <input type="text" name="txtAddress" value="" required placeholder="Địa chỉ *">
                     </p>
                     
                 </div>
                 <div>
-                    <textarea name="txtQuestion" placeholder="Gửi câu hỏi *"></textarea>
+                    <textarea name="txtQuestion" required placeholder="Gửi câu hỏi *"></textarea>
                 </div>
-                <div class="submit">
-                    <button type="button">GỬI CÂU HỎI</button>
+                <div>
+                    <button type="submit">GỬI CÂU HỎI</button>
                 </div>
             </form>
         </div>
