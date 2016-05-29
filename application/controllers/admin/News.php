@@ -26,7 +26,7 @@ class News extends CI_Controller{
 		if(!empty($this->uri->segment(5)) && $this->uri->segment(5) != "page"){
 			$offset = 0;
 		}else{
-			if(!empty($this->uri->segment(6))){
+			if(empty($this->uri->segment(6))){
 				$offset = 0;
 			}
 			$offset = (int)$this->uri->segment(6);
@@ -222,7 +222,7 @@ class News extends CI_Controller{
 		if(!empty($this->uri->segment(5)) && $this->uri->segment(5) != "page"){
 			$offset = 0;
 		}else{
-			if(!empty($this->uri->segment(6))){
+			if(empty($this->uri->segment(6))){
 				$offset = 0;
 			}
 			$offset = (int)$this->uri->segment(6);

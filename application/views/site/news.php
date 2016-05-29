@@ -22,21 +22,7 @@
                 </div>
             </div>
             <?php } ?>
-            <section class="paper">
-                <div class="clearfix">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#" class="active">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">20</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                    </ul>
-                </div>
-            </section>
+            <?php echo $pagination_link; ?>
         </div>
         <!-- news-text -->
         <div class="news-video">

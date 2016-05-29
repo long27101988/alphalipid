@@ -8,6 +8,7 @@ class Video_news_model extends CI_Model{
 
 	public function get_videos_by_cat_id($id){
 		$this->db->limit(5);
+		$this->db->order_by('id', 'desc');
 		$this->db->where('cat_id', $id);
 		$this->db->select('id, title, video_url');
 		return $this->db->get($this->_table)->result_array();

@@ -9,14 +9,68 @@ class Faqs extends CI_Controller{
 		$this->load->library('email');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
+		$this->load->library('pagination');
+		$this->load->library('session');
 	}
 
 	public function index(){
+		$size = 2; 	
+		$this->session->unset_userdata('search');
+		if(!empty($this->uri->segment(3)) && $this->uri->segment(3) != "page" ){
+			$offset = 0;
+		}else{
+
+			if(empty($this->uri->segment(4))){
+				$offset = 0;
+			}
+			$offset = (int)$this->uri->segment(4);
+		}
 		$this->_data['title'] = 'Hỏi đáp';
-		$this->_data['all_faqs'] = $this->faqs_model->get_all_faqs();
+		$this->_data['all_faqs_no_limit'] = $this->faqs_model->get_all_faqs();
+		$this->_data['all_faqs'] = $this->faqs_model->get_all_faqs_limit($offset, $size);
 		$this->_data['subview'] = 'site/faqs';
 		$this->_data['cat_news'] = $this->cat_news_model->get_all_cat_news();
-		$this->load->view('site/templates/main', $this->_data);
+		//config pagination
+		$config['base_url'] = "/faqs/index/page";
+		$config['total_rows'] = count($this->_data['all_faqs_no_limit']);
+		$config['per_page'] = $size;
+
+		$config['full_tag_open'] = '<section class="paper"><div class="clearfix"><ul>';
+		//config first link
+		$config['first_link'] = '<i class="fa fa-angle-double-left"></i>';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['first_url'] = '/faqs/index';
+
+		//config prev
+		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+
+		//config current link
+		$config['cur_tag_open'] = '<li> <a href="#" class="active">';
+		$config['cur_tag_close'] = '</a></li>';
+
+		//config digit link
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+
+		//config next link
+		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+
+		//config last link
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['last_link'] = '<i class="fa fa-angle-double-right"></i>';
+
+		$config['full_tag_close'] = '</ul></div></section>';
+
+		$this->pagination->initialize($config);
+		//end config pagination
+		$this->_data['pagination_link'] = $this->pagination->create_links();
+		
 
 		if(!empty($this->input->post())){
 			if(!empty($this->input->post('send_question'))){
@@ -47,17 +101,30 @@ class Faqs extends CI_Controller{
 
 					$this->email->send();
 				}
-			}else if(!empty($this->input->post('search_faq'))){
-				$search_condition 			= $this->input->post('search');
+			}else if(!empty($this->input->post('search')) || (!empty($this->session->userdata('search')) && $this->session->userdata('search') != "")){
+				if(empty($this->session->userdata('search'))){
+					$search_condition 			= $this->input->post('search');
+					$data_search['search'] =  $this->input->post('search');
+					$this->session->set_userdata($data_search);
+				}else{
+					$search_condition = $this->session->userdata('search');
+				}
 				$this->_data['title'] = 'Hỏi đáp';
-				$this->_data['all_faqs'] = $this->news_model->search_faq($search_condition);;
+				$this->_data['all_faqs_search_no_limit'] = $this->faqs_model->search_faq($search_condition);
+				$this->_data['all_faqs'] = $this->faqs_model->search_faq_limit($search_condition, $offset, $size);
+				//var_dump($this->faqs_model->search_faq_limit($search_condition, $offset, $size));die();
+				$config['base_url'] = "/faqs/index/page";
+				$config['total_rows'] = count($this->_data['all_faqs_search_no_limit']);
+				$config['per_page'] = $size;
 				$this->_data['subview'] = 'site/faqs';
 				$this->_data['cat_news'] = $this->cat_news_model->get_all_cat_news();
-				$this->load->view('site/templates/main', $this->_data);
+				$this->pagination->initialize($config);
+				//end config pagination
+				$this->_data['pagination_link'] = $this->pagination->create_links();
 			}
-			
 			//echo $this->email->print_debugger();	
 		}
+		$this->load->view('site/templates/main', $this->_data);
 	}
 }
 ?>

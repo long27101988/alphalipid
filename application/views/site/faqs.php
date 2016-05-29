@@ -3,7 +3,7 @@
         <form action="" method="post">
             <div>
                 <input type="text" name="search" value="" placeholder="Search...">
-                <button name="search_faq" type="button">Search</button>
+                <button name="search_faq" type="submit">Search</button>
             </div> 
         </form>
     </section>
@@ -31,6 +31,7 @@
                 <?php } ?>
             </ul>
         </div>
+        <?php echo $pagination_link; ?>
         <div class="faqs-bottom">
             <h2 class="faqs-title">GỬI CÂU HỎI</h2>
             <?php echo validation_errors(); ?>
