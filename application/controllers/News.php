@@ -20,7 +20,17 @@ class News extends CI_Controller{
 		$this->_data['cat_news'] 	= $this->cat_news_model->get_all_cat_news();
 		$this->_data['title'] 		= $cate['title'];
 		
+		if(!empty($this->input->post())){
+			$search_condition 			= $this->input->post('search');
+			$this->_data['news']		= $this->news_model->search_news($cate['id'], $search_condition);
+			$this->_data['video_news'] 	= $this->video_news_model->search_video($cate['id'], $search_condition);
+			$this->_data['subview'] 	= 'site/news';
+			$this->_data['cat_news'] 	= $this->cat_news_model->get_all_cat_news();
+			$this->_data['title'] 		= $cate['title'];
+		}
+
 		$this->load->view('site/templates/main', $this->_data);
+		
 	}
 
 	public function get_new_details($slug){

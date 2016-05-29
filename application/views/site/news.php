@@ -1,4 +1,12 @@
 <div class="news container">
+    <section class="box-search">
+        <form action="" method="post">
+            <div>
+                <input type="text" name="search" value="" placeholder="Search...">
+                <button type="submit">Search</button>
+            </div> 
+        </form>
+    </section>
     <section class="clearfix">
         <div class="news-text">
             <?php foreach($news as $item){?>

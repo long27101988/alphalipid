@@ -1,4 +1,12 @@
 <div class="faqs-inner">
+    <section class="box-search">
+        <form action="" method="post">
+            <div>
+                <input type="text" name="search" value="" placeholder="Search...">
+                <button name="search_faq" type="button">Search</button>
+            </div> 
+        </form>
+    </section>
     <h1>Những câu hỏi thường gặp</h1>
     <section class="container clearfix">
         <div class="faqs-top">
@@ -48,7 +56,7 @@
                     <textarea name="txtQuestion" required placeholder="Gửi câu hỏi *"></textarea>
                 </div>
                 <div>
-                    <button type="submit">GỬI CÂU HỎI</button>
+                    <button name="send_question" type="submit">GỬI CÂU HỎI</button>
                 </div>
             </form>
         </div>
