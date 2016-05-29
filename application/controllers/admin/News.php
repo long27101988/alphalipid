@@ -21,7 +21,7 @@ class News extends CI_Controller{
 			$this->_data['id'] 			= (int)$id;
 		}
 
-		$size = 1; 
+		$size = 4; 
 		
 		if(!empty($this->uri->segment(5)) && $this->uri->segment(5) != "page"){
 			$offset = 0;
@@ -29,13 +29,14 @@ class News extends CI_Controller{
 			if(!empty($this->uri->segment(6))){
 				$offset = 0;
 			}
-			$offset = (int)$this->uri->segment(6) * $size;
+			$offset = (int)$this->uri->segment(6);
 		}
 		$this->_data['title'] 		= 'All News';
 		$this->_data['group_news'] 	= $this->cat_news_model->get_cat_news();
 		$this->_data['all_news_not_limit'] 	= $this->news_model->get_news_by_cat_id($this->_data['id']);
 		$this->_data['all_news'] 	= $this->news_model->get_news_by_cat_id_limit($this->_data['id'], $offset, $size);
 		$this->_data['subview'] 	= 'admin/group_news/news/list';
+		$this->_data['id_cate'] 	= $this->_data['id'];
 		
 		//config pagination
 		$config['base_url'] = "/admin/news/index/".$this->_data['id']."/page/";
@@ -120,12 +121,13 @@ class News extends CI_Controller{
         
     }
 
-	public function add(){
-
+	public function add($id_cate = null){
+		
 		$this->_data['title'] 		= 'Add A New';
 		$this->_data['subview'] 	= 'admin/group_news/news/add';
 		$this->_data['next_pos'] 	= $this->news_model->get_next_pos();
 		$this->_data['group_news'] 	= $this->cat_news_model->get_cat_news();
+		$this->_data['id_cate']		= (!empty($id_cate)) ? (int)$id_cate : (int)$this->cat_news_model->get_first_cat_news();
 
 		$this->form_validation->set_rules("txtTitle", "title", "required|trim");
 		$this->form_validation->set_rules("txtDesc", "desc", "required|trim");
@@ -215,7 +217,7 @@ class News extends CI_Controller{
 			$this->_data['id']			= (int)$id;
 		}
 
-		$size = 1; 
+		$size = 4; 
 		
 		if(!empty($this->uri->segment(5)) && $this->uri->segment(5) != "page"){
 			$offset = 0;
@@ -223,7 +225,7 @@ class News extends CI_Controller{
 			if(!empty($this->uri->segment(6))){
 				$offset = 0;
 			}
-			$offset = (int)$this->uri->segment(6) * $size;
+			$offset = (int)$this->uri->segment(6);
 		}
 
 		$this->_data['title'] 		= 'All News';
@@ -231,6 +233,7 @@ class News extends CI_Controller{
 		$this->_data['all_news_not_limit'] 	= $this->video_news_model->get_news_by_cat_id($this->_data['id']);
 		$this->_data['all_news'] 	= $this->video_news_model->get_news_by_cat_id_limit($this->_data['id'], $offset, $size);
 		$this->_data['subview'] 	= 'admin/group_news/videos/list';
+		$this->_data['id_cate'] 	= $this->_data['id'];
 
 		//config pagination
 		$config['base_url'] = "/admin/news/video_index/".$this->_data['id']."/page/";
@@ -292,11 +295,12 @@ class News extends CI_Controller{
 	}
 
 
-	public function video_add(){
+	public function video_add($id_cate = null){
 		$this->_data['title'] = 'Add A Video';
 		$this->_data['subview'] = 'admin/group_news/videos/add';
 		$this->_data['next_pos'] = $this->video_news_model->get_next_pos();
 		$this->_data['group_news'] 	= $this->cat_news_model->get_cat_news();
+		$this->_data['id_cate']		= (!empty($id_cate)) ? (int)$id_cate : (int)$this->cat_news_model->get_first_cat_news();;
 
 		$this->form_validation->set_rules("txtTitle", "title", "required|trim");
 		$this->form_validation->set_rules("txtVideoUrl", "url", "required|trim");

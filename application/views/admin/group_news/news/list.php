@@ -15,7 +15,7 @@
                 }
             ?>
             <div class="tableoptions">
-                <button class="addbutton radius3" title="table2" onclick="location.href='<?php echo base_url(); ?>admin/news/add';">Add</button> &nbsp;
+                <button class="addbutton radius3" title="table2" onclick="location.href='<?php echo base_url(); ?>admin/news/add/<?php echo $id_cate?>';">Add</button> &nbsp;
                 <button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;      
                 <select class="sel-categories radius3" onchange="changeGroupNews(this);">
                 <?php foreach($group_news as $value){ ?>

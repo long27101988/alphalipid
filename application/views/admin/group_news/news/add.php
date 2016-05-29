@@ -23,7 +23,7 @@
                     <span class="field">
                         <select name="selCatNew" class="mediuminput">
                             <?php foreach($group_news as $value){ ?>
-                                <option value="<?= $value['id']?>"><?=$value['title']?></option>
+                                <option value="<?= $value['id']?>" <?php if($value['id'] == $id_cate) {echo "selected='selected'";} ?>><?=$value['title']?></option>
                             <?php }?>
                         </select>
                     </span>
